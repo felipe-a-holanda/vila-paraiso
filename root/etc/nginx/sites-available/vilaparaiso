@@ -4,11 +4,11 @@ server {
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
-        root /home/django/vilaparaiso.org;
+        root /home/django/vilaparaiso.org/vilaparaiso;
     }
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/home/django/vilaparaiso.org/vilaparaiso.sock;
+        proxy_pass http://unix:/home/django/vilaparaiso.org/vilaparaiso/vilaparaiso.sock;
     }
 }

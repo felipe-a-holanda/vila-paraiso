@@ -5,8 +5,8 @@ After=network.target
 [Service]
 User=django
 Group=django
-WorkingDirectory=/home/django/vilaparaiso.org
-ExecStart=/home/django/vilaparaiso.org/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/django/vilaparaiso.org/myproject.sock vilaparaiso.wsgi:application
+WorkingDirectory=/home/django/vilaparaiso.org/vilaparaiso
+ExecStart=/home/django/vilaparaiso.org/vilaparaiso/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/django/vilaparaiso.org/vilaparaiso/vilaparaiso.sock vilaparaiso.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
