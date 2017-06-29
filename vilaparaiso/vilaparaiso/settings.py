@@ -25,7 +25,7 @@ SECRET_KEY = 'rs6+(drm2ngd-b=tpu#fkpqyixcew-!7y*z9yj&vgy^f$#keo='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.241.215.206']
+ALLOWED_HOSTS = ['192.241.215.206', 'vilaparaiso.org']
 
 
 # Application definition
