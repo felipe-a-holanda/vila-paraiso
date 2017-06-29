@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name 192.241.215.206;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/django/vilaparaiso.org;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/django/vilaparaiso.org/vilaparaiso.sock;
+    }
+}
