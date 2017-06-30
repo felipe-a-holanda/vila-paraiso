@@ -11,9 +11,15 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+
+ROOT_DIR = environ.Path(__file__) - 2  # (vilaparaiso/config/settings/base.py - 3 = vilaparaiso/)
+APPS_DIR = ROOT_DIR.path('vilaparaiso')
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +31,7 @@ SECRET_KEY = 'rs6+(drm2ngd-b=tpu#fkpqyixcew-!7y*z9yj&vgy^f$#keo='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.241.215.206', 'vilaparaiso.org']
+ALLOWED_HOSTS = ['.vilaparaiso.org', '192.241.215.206', '127.0.0.1']
 
 
 # Application definition
@@ -54,7 +60,9 @@ ROOT_URLCONF = 'vilaparaiso.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            str(APPS_DIR.path('templates')),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
