@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 
-ROOT_DIR = environ.Path(__file__) - 2  # (vilaparaiso/config/settings/base.py - 3 = vilaparaiso/)
+ROOT_DIR = environ.Path(__file__) - 2  # (vilaparaiso/vilaparaiso/settings.py - 2 = vilaparaiso/)
 APPS_DIR = ROOT_DIR.path('vilaparaiso')
 
 
