@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name 192.241.215.206;
+    server_name vilaparaiso.org;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
@@ -12,3 +12,5 @@ server {
         proxy_pass http://unix:/home/django/vilaparaiso.org/vilaparaiso/vilaparaiso.sock;
     }
 }
+
+
