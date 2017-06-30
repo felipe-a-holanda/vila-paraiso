@@ -1,0 +1,2 @@
+#!/bin/sh
+git --work-tree=/home/django/vilaparaiso.org --git-dir=/home/django/git.vilaparaiso.org checkout -f
