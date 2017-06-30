@@ -1,0 +1,9 @@
+# Bleeding edge Django
+Django==1.11.2
+
+# Configuration
+django-environ==0.4.3
+
+
+pytz==2017.2
+
