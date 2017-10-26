@@ -1,9 +1,16 @@
 # Bleeding edge Django
-Django==1.11.2
+Django==1.11.4
 
 # Configuration
 django-environ==0.4.3
+django-jet==1.0.6
 
 
+django-autoslug==1.9.3
 pytz==2017.2
 
+django-extensions==1.8.1
+django-mptt==0.8.7
+
+django-cities-light==3.3.0
+django-timezone-field==2.0
