@@ -174,7 +174,7 @@ AUTH_USER_MODEL = 'users.User'
 #http://download.geonames.org/export/dump/iso-languagecodes.txt
 CITIES_LIGHT_APP_NAME = 'cities'
 CITIES_LIGHT_TRANSLATION_LANGUAGES = ['en', 'es', 'pt', 'abbr']
-CITIES_LIGHT_INCLUDE_COUNTRIES = ['BR']
+#CITIES_LIGHT_INCLUDE_COUNTRIES = ['BR']
 
 
 JET_THEMES = [
