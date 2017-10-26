@@ -3,7 +3,7 @@ server {
     server_name vilaparaiso.org;
 
     location = /favicon.ico { access_log off; log_not_found off; }
-    location /static/ {
+    location /staticfiles/ {
         root /home/django/vilaparaiso.org/vilaparaiso;
     }
 
