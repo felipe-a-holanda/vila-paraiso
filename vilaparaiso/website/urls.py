@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import TemplateView
+from . import views
 
 urlpatterns = [
-    url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
-    url(r'^admin/', admin.site.urls),
-    url(r'^site/', include('website.urls', namespace='website')),
-    url(r'^$', TemplateView.as_view(template_name='soon.html'), name='home'),
+    
+    url(r'^contact$', views.ContactView.as_view(), name='contact-form'),
+    url(r'^thanks/(?P<pk>\d+)$', views.ThanksView.as_view(), name='thanks-view'),
 ]

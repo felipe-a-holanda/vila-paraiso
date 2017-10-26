@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<!-- Header Section Starts -->
+    <header id="header">
+        <div class="header-overlay">
+            <div class="container">
+                <!-- Logo Starts -->
+                <a style="display:block" href="{% url 'home' %}">
+                <div data-scroll-reveal="enter top and move 50px over 1.2s" class="centered">
+                    
+                </div>
+                </a>
+                
+                
+                <!-- Logo Ends -->
+                <!-- Main Heading Starts -->
+                <div class="main-head">
+                    <h2 data-scroll-reveal="enter left and move 50px over 1.8s">
+                        Vila Paraiso - Laboratório Regenerativo</h2>
+                    <p data-scroll-reveal="enter right and move 50px over 2.0s">
+                        Construtores de realidades arcturianos, sirianos e pleiadianos estão trabalhando amorasamente para dar vida a esta entidade cibernética.</p>
+                </div>
+                <!-- Main Heading Ends -->
+            </div>
+            <!-- Countdown Area Starts -->
+            <div id="countdown-area">
+                <!-- Count Down Timer Starts -->
+                <ul class="countdown">
+                    <li><span data-scroll-reveal="enter bottom and move 20px over 1.2s" class="days">00</span>
+                        <p data-scroll-reveal="enter top and move 20px over 1.4s" class="days_ref">
+                            days</p>
+                    </li>
+                    <li><span data-scroll-reveal="enter bottom and move 20px over 1.6s" class="hours">00</span>
+                        <p data-scroll-reveal="enter top and move 20px over 1.8s" class="hours_ref">
+                            hours</p>
+                    </li>
+                    <li><span data-scroll-reveal="enter bottom and move 2px over 2.0s" class="minutes">00</span>
+                        <p data-scroll-reveal="enter top and move 20px over 2.2s" class="minutes_ref">
+                            minutes</p>
+                    </li>
+                    <li><span data-scroll-reveal="enter bottom and move 20px over 2.4s" class="seconds">00</span>
+                        <p data-scroll-reveal="enter top and move 20px over 2.6s" class="seconds_ref">
+                            seconds</p>
+                    </li>
+                </ul>
+                <!-- Count Down Timer Ends -->
+            </div>
+            <!-- Countdown Area Ends -->
+           
+        </div>
+    </header>
+    <!-- Header Section Ends -->
+    
+{% endblock %}
+
+
+{% block services %}
+    <!-- Services Section Starts -->
+    
+    <section id="services">
+        <div class="services-overlay">
+            <div class="container">
+                <!-- Main Heading Starts -->
+                <div class="main-head">
+                    <h2 data-scroll-reveal="enter top and move 50px over 1.2s">Sobre nós</h2>
+					<h5 data-scroll-reveal="enter bottom and move 50px over 1.4s">
+                        Fundada em 2016, a Vila Paraíso é um projeto contido de experimentações e co-criações, localizada na Chapada dos Veadeiros a 16 km da cidade de Alto Paraíso. Com 92 hectares, a ecovila aplica atividades de preservação ambiental, permacultura, sistema de desenho humano, comunicação não-violenta, arte de anfitriar, dragon dreaming, auto-organização, economia criativa e auto-sustentabilidade.
+</h5>
+                    <br />
+                    <p data-scroll-reveal="enter bottom and move 50px over 1.4s">
+                        
+                    </p>
+                </div>
+                <!-- Main Heading Ends -->
+                <!-- Services List Starts -->
+                <div id="services-blocks" class="row">
+                    <div data-scroll-reveal="enter bottom and move 50px over 1.6s" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sblock">
+                        <span class="fa fa-star-o"></span>
+                        <h4>
+                            Permacultura</h4>
+                        <p>
+                            O cuidado com a terra é uma das nossas bases.
+                        </p>
+                    </div>
+                    <div data-scroll-reveal="enter top and move 50px over 1.7s" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sblock">
+                        <span class="fa fa-certificate"></span>
+                        <h4>
+                            Auto conhecimento</h4>
+                        <p>
+                            Modernas ferramentas de auto conhecimento são estudadas aqui.
+                        </p>
+                    </div>
+                    <div data-scroll-reveal="enter bottom and move 50px over 1.8s" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sblock">
+                        <span class="fa fa-smile-o"></span>
+                        
+                        <h4>
+                            Desfrutar da vida</h4>
+                        <p>
+                            Transicionamos da era de meramente sobreviver para realmente viver.
+                        </p>
+                    </div>
+                </div>
+                <!-- Services List Ends -->
+            </div>
+        </div>
+    </section>
+    <!-- Services Section Ends -->
+{% endblock %}
+
+
+{% block contact %}
+    <!-- Contact Us Section Starts -->
+    <section id="contact">
+        <div class="container">
+            <!-- Main Heading Starts -->
+            <div class="main-head">
+                <h2 data-scroll-reveal="enter top and move 50px over 1.2s" class="MT40">
+                    Inscreva-se</h2>
+            </div>
+            <!-- Main Heading Ends -->
+            <!-- Form & Address Blocks Starts -->
+            <div class="row">
+                <!-- Contact Form Starts -->
+                
+                {% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+                
+                
+                <div data-scroll-reveal="enter left and move 50px over 1.6s" id="contact-area" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <form id="contact-form" class="contact-form" name="contact-form" method="post" action="{% url 'website:contact-form' %}">
+                        {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" required placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" required placeholder="Seu email">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info">Enviar</button>
+                    </div>
+                    </form>
+                </div>
+                <!-- Contact Form Ends -->
+                <!-- Contact Address Starts -->
+                <div data-scroll-reveal="enter right and move 50px over 1.8s" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <p>
+                        Para ficar sabendo das novidades da Vila Paraiso, inscreva-se aqui</p>
+                </div>
+                <!-- Contact Address Ends -->
+            </div>
+            <!-- Form & Address Blocks Ends -->
+        </div>
+    </section>
+    <!-- Contact Us Section Ends -->
+    {% endblock %}
+
+{% block social %}
+    <section id="social">
+        <!-- Social Network List Starts -->
+                <div id="social-blocks" class="row">
+                    <div data-scroll-reveal="enter bottom and move 50px over 1.6s" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sblock">
+                        <a href="https://www.facebook.com/Lab.Vila.Paraiso/"><span class="fa fa-facebook "></span></a>
+                        <h4>
+                            <a href="https://www.facebook.com/Lab.Vila.Paraiso/">Facebook</a></h4>
+                        <p>
+                            
+                        </p>
+                    </div>
+                    <div data-scroll-reveal="enter top and move 50px over 1.7s" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sblock">
+                        <a href="https://instagram.com/Vila.Paraiso"><span class="fa  fa-instagram "></span></a>
+                        <h4>
+                            <a href="https://instagram.com/Vila.Paraiso">@Vila.Paraiso</a></h4>
+                        <p>
+                            
+                        </p>
+                    </div>
+                    <div data-scroll-reveal="enter bottom and move 50px over 1.8s" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sblock">
+                        <a href="https://www.youtube.com/channel/UCTrXAJ7SAaNR_3AC_qmk1uQ"><span class="fa fa-youtube "></span></a>
+                        
+                        <h4>
+                            <a href="https://www.youtube.com/channel/UCTrXAJ7SAaNR_3AC_qmk1uQ">YouTube</a></h4>
+                        <p>
+                            
+                        </p>
+                    </div>
+                </div>
+                <!-- Social Network List Ends -->
+        
+    </section>
+    {% endblock %}
+    
+        {% block footer %}
+    <!-- Footer Starts -->
+    <footer id="footer">
+        <div class="container">
+            <!-- Copyright Starts -->
+            <div data-scroll-reveal="enter bottom and move 50px over 1.2s">
+                <p data-scroll-reveal="enter over 3.2s">
+                    Vila Paraiso - Laboratório Regenerativo 2017
+                </p>
+            </div>
+            <!-- Copyright Ends -->
+        </div>
+    </footer>
+    
+    <!-- Footer Ends -->
+    {% endblock %}
